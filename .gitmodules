@@ -16,3 +16,15 @@
 [submodule "vim/bundle/neocomplcache.vim"]
 	path = vim/bundle/neocomplcache.vim
 	url = https://github.com/Shougo/neocomplcache.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-gradle"]
+	path = vim/bundle/vim-gradle
+	url = https://github.com/tfnico/vim-gradle
+[submodule "vim/bundle/ocp-indent-vim"]
+	path = vim/bundle/ocp-indent-vim
+	url = https://github.com/def-lkb/ocp-indent-vim
+[submodule "vim/bundle/haskell-vim"]
+	path = vim/bundle/haskell-vim
+	url = https://github.com/raichoo/haskell-vim

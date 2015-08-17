@@ -4,15 +4,16 @@ setlocal omnifunc=necoghc#omnifunc
 let $PATH = $PATH . ':' . expand("~/.cabal/bin")
 
 " Tab specific option
-set tabstop=8                   "A tab is 8 spaces
+set tabstop=2                   "A tab is 8 spaces
 set expandtab                   "Always uses spaces instead of tabs
-set softtabstop=4               "Insert 4 spaces when tab is pressed
-set shiftwidth=4                "An indent is 4 spaces
+set softtabstop=2               "Insert 4 spaces when tab is pressed
+set shiftwidth=2                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 
 syntax on
 hi ghcmodType ctermbg=yellow
 let g:ghcmod_type_highlight = 'ghcmodType'
+filetype plugin on
 filetype plugin indent on
 
 let s:width = 80
@@ -27,6 +28,9 @@ function! HaskellModuleSection(...)
 endfunction
 
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
+
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 
 " Autocompletion stuff
 let g:acp_enableAtStartup = 0
@@ -87,6 +91,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ocaml setlocal omnifunc=merlin#Complete
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_force_omni_patterns')
@@ -110,3 +115,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
+
+
+" Clojure settings
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
